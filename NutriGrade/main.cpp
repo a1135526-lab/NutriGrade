@@ -113,7 +113,7 @@ int main() {
 	}
 	try
 	{
-		Dessert eggPineapple("¹F§J¥Ë¯÷ÄÐ³J¶À¤g»ñ±ù", -384.2, 7.6, 23.4, 10.8, 0, 37.9, 31, 126, 0, 0, false, false);
+		Dessert eggPineapple("¹F§J¥Ë¯÷-ÄÐ³J¶À¤g»ñ±ù", -384.2, 7.6, 23.4, 10.8, 0, 37.9, 31, 126, 0, 0, false, false);
 		foodPtr = &eggPineapple;
 		foodPtr->print();
 	}
