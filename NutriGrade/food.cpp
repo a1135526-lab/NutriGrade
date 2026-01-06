@@ -87,7 +87,7 @@ double Food::getCarbonhydrate()const {
 void Food::setSatfat(double sat) {
 	if (sat >= 0)
 	{
-		satfat = sat;;
+		satfat = sat;
 	}
 	else
 	{
