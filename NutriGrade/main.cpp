@@ -1,5 +1,6 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<iomanip>
+#include<string>
 #include"food.h"
 #include"baverage.h"
 #include"juice.h"
@@ -8,33 +9,44 @@
 
 using namespace std;
 
-//Baverage("name",calories,protein,fat,saturated fat,trans fat,carbonhydrate,sugar,sodium,calcium,potassium,content,fruit percentage,pulp)  per 100ml
+//Baverage("name",
+//			calories,
+//			protein,
+//			fat,
+//			saturated fat,
+//			trans fat,
+//			carbonhydrate,
+//			sugar,
+//			sodium,
+//			calcium,
+//			potassium,
+//			content,
+//			fruit percentage,
+//			pulp)  per 100ml
 
-int main() {
-	cout << fixed << setprecision(2);
-	
+void demo() {
 	Food* foodPtr = nullptr;
 	try
 	{
-		Baverage wheatGoodSmelledMilktea("³Á­»¥¤¯ù", 39.4, 0.3, 0.2, 0.2, 0, 9.1, 8.7, 17, 0, 0, false);
+		Baverage wheatGoodSmelledMilktea("éº¥é¦™å¥¶èŒ¶", 39.4, 0.3, 0.2, 0.2, 0, 9.1, 8.7, 17, 0, 0, false);
 		wheatGoodSmelledMilktea.print();
 	}
-	catch (const exception&e)
+	catch (const exception& e)
 	{
 		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
-		Baverage marklessMilk("ÂøµP¤û¥¤", 66.2, 3.2, 4.0, 2.6, 0, 4.8, 4.6, 40, 100, 0, false);
+		Baverage marklessMilk("é›œç‰Œç‰›å¥¶", 66.2, 3.2, 4.0, 2.6, 0, 4.8, 4.6, 40, 100, 0, false);
 		marklessMilk.print();
 	}
-	catch (const exception&e)
+	catch (const exception& e)
 	{
 		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
-		Baverage milk("¨ý¥þ¤û¥¤", 65, 3.0, 3.7, 2.4, 0, 5.0, 5.0, 45, 100, 0, false);
+		Baverage milk("å‘³å…¨ç‰›å¥¶", 65, 3.0, 3.7, 2.4, 0, 5.0, 5.0, 45, 100, 0, false);
 		milk.print();
 	}
 	catch (const exception& e)
@@ -43,7 +55,7 @@ int main() {
 	}
 	try
 	{
-		Baverage bomi("ªi»eªGµæ¥Ä", 37, 0, 0, 0, 0, 9.3, 8.3, 25, 0, 0, false);
+		Baverage bomi("æ³¢èœœæžœèœæ±", 37, 0, 0, 0, 0, 9.3, 8.3, 25, 0, 0, false);
 		foodPtr = &bomi;
 		foodPtr->print();
 	}
@@ -53,7 +65,7 @@ int main() {
 	}
 	try
 	{
-		Baverage eletricWater("¹q¸Ñ¤ô", 13, 0.2, 0, 0, 0, 15, 2, 86, 0, 63, false);
+		Baverage eletricWater("é›»è§£æ°´", 13, 0.2, 0, 0, 0, 15, 2, 86, 0, 63, false);
 		foodPtr = &eletricWater;
 		foodPtr->print();
 	}
@@ -63,17 +75,17 @@ int main() {
 	}
 	try
 	{
-		Baverage water("ÆP©ÊÂ÷¤l¤ô", 1, 0, 0, 0, 0, 0, 0, 0.2, 0, 0, false);
+		Baverage water("é¹¼æ€§é›¢å­æ°´", 1, 0, 0, 0, 0, 0, 0, 0.2, 0, 0, false);
 		foodPtr = &water;
 		foodPtr->print();
 	}
-	catch (const exception & e)
+	catch (const exception& e)
 	{
 		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
-		Juice bomijuice("¸²µåºî¦XªG¥Ä", 56, 0, 0, 0, 0, 14, 13.2, 10, 0, 0, false, 100, false);
+		Juice bomijuice("è‘¡è„ç¶œåˆæžœæ±", 56, 0, 0, 0, 0, 14, 13.2, 10, 0, 0, false, 100, false);
 		foodPtr = &bomijuice;
 		foodPtr->print();
 	}
@@ -83,7 +95,7 @@ int main() {
 	}
 	try
 	{
-		Meal bandong("¶W°ÓÂû¯Ý¦×À\²°", 136, 9.4, 2.7, 0.6, 0, 18.5, 0.5, 206, 0, 0, 0);
+		Meal bandong("è¶…å•†é›žèƒ¸è‚‰é¤ç›’", 136, 9.4, 2.7, 0.6, 0, 18.5, 0.5, 206, 0, 0, 0);
 		foodPtr = &bandong;
 		foodPtr->print();
 	}
@@ -103,7 +115,7 @@ int main() {
 	}
 	try
 	{
-		Dessert cake("µLªáªG³J¿|", 407.2, 4.3, 21.4, 11, 0, 50, 21.2, 36, 0, 0, false, false);
+		Dessert cake("ç„¡èŠ±æžœè›‹ç³•", 407.2, 4.3, 21.4, 11, 0, 50, 21.2, 36, 0, 0, false, false);
 		foodPtr = &cake;
 		foodPtr->print();
 	}
@@ -113,7 +125,7 @@ int main() {
 	}
 	try
 	{
-		Dessert eggPineapple("¹F§J¥Ë¯÷-ÄÐ³J¶À¤g»ñ±ù", -384.2, 7.6, 23.4, 10.8, 0, 37.9, 31, 126, 0, 0, false, false);
+		Dessert eggPineapple("é”å…‹ç“¦èŒ²-é¹¹è›‹é»ƒåœŸé³³æ¢¨", -384.2, 7.6, 23.4, 10.8, 0, 37.9, 31, 126, 0, 0, false, false);
 		foodPtr = &eggPineapple;
 		foodPtr->print();
 	}
@@ -121,4 +133,16 @@ int main() {
 	{
 		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
+}
+
+int main() {
+	cout << fixed << setprecision(2);
+	
+	// é¡¯ç¤ºç¯„ä¾‹
+	cout << "æ˜¯å¦é¡¯ç¤ºç¯„ä¾‹? (Y/n)";
+	string usrInput;
+	cin >> usrInput;
+	if (usrInput.compare("Y") == 0) demo();
+
+	cout << "end\n";
 }

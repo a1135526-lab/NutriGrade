@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include"food.h"
 using namespace std;
 

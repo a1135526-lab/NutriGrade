@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include"baverage.h"
 
 using namespace std;
@@ -33,8 +33,8 @@ bool Baverage::getContent()const {
 	return content;
 }
 
-double Baverage::calculateScore()const {//°Ñ¦Ò WHO ªº¡u¥¨¶qÀç¾i¯À«ØÄ³¤À°t½d³ò (AMDR)¡v±ÄPFC¥­¿Å«ü¼Æºtºâ ºtºâªk®Ö¤ß¡GModified HSR (Health Star Rating) for Beverages
-	double score = 80;//°_©l¤À¼Æ
+double Baverage::calculateScore()const {//åƒè€ƒ WHO çš„ã€Œå·¨é‡ç‡Ÿé¤Šç´ å»ºè­°åˆ†é…ç¯„åœ (AMDR)ã€æ¡PFCå¹³è¡¡æŒ‡æ•¸æ¼”ç®— æ¼”ç®—æ³•æ ¸å¿ƒï¼šModified HSR (Health Star Rating) for Beverages
+	double score = 80;//èµ·å§‹åˆ†æ•¸
 	double negPoint = 0, posPoint = 0;
 	
 	negPoint += (getCalories() / 100) * 4;//100kcal -4
@@ -47,7 +47,7 @@ double Baverage::calculateScore()const {//°Ñ¦Ò WHO ªº¡u¥¨¶qÀç¾i¯À«ØÄ³¤À°t½d³ò (A
 	posPoint += (getContent() == true) ? -5 : 0;
 	score += posPoint - negPoint;
 
-	if (getCalories()<5&&getSugar()<0.5)//¯Â¤ôµL¿}¯ùµ¹°ª¤À
+	if (getCalories()<5&&getSugar()<0.5)//ç´”æ°´ç„¡ç³–èŒ¶çµ¦é«˜åˆ†
 	{
 		score += (100 - score) * 0.9;
 	}
@@ -59,12 +59,12 @@ double Baverage::calculateScore()const {//°Ñ¦Ò WHO ªº¡u¥¨¶qÀç¾i¯À«ØÄ³¤À°t½d³ò (A
 }
 
 string Baverage::getGrade(double score)const {
-	if (score >= 90) return "S (·¥¨Î)";
-	else if (score >= 78 && score < 90) return "A (°·±d)";
-	else if (score >= 66 && score < 78) return "B (©|¥i)";
-	else if (score >= 54 && score < 66) return "C (»İª`·N)";
-	else if (score >= 42 && score < 54) return "D (´X¥G¤£°·±d)";
-	else return "F (¤£°·±d)";
+	if (score >= 90) return "S (æ¥µä½³)";
+	else if (score >= 78 && score < 90) return "A (å¥åº·)";
+	else if (score >= 66 && score < 78) return "B (å°šå¯)";
+	else if (score >= 54 && score < 66) return "C (éœ€æ³¨æ„)";
+	else if (score >= 42 && score < 54) return "D (å¹¾ä¹ä¸å¥åº·)";
+	else return "F (ä¸å¥åº·)";
 }
 
 void Baverage::print()const {

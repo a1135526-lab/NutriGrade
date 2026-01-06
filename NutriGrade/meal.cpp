@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include"meal.h"
 
 using namespace std;
@@ -71,8 +71,8 @@ double Meal::calculateScore() const {
     double raw_score = total_P - total_N + clean_bonus;
     double final_score = 70.0 + (raw_score * 1.7);
 
-    double fried_penalty = (getFriedpercent() / 10.0) * 3.0; // ¥[­«¦©¤À
-    double trans_penalty = d_trans * 15.0; // ¤Ï¦¡¯×ªÕ "BIG PENALTY"
+    double fried_penalty = (getFriedpercent() / 10.0) * 3.0; // åŠ é‡æ‰£åˆ†
+    double trans_penalty = d_trans * 15.0; // åå¼è„‚è‚ª "BIG PENALTY"
 
     final_score = final_score - fried_penalty - trans_penalty;
 
@@ -84,12 +84,12 @@ double Meal::calculateScore() const {
 
 
 string Meal::getGrade(double score)const {
-    if (score >= 90) return "S (·¥¨Î)";
-    else if (score >= 78 && score < 90) return "A (°·±d)";
-    else if (score >= 66 && score < 78) return "B (©|¥i)";
-    else if (score >= 54 && score < 66) return "C (»Ýª`·N)";
-    else if (score >= 42 && score < 54) return "D (´X¥G¤£°·±d)";
-    else return "F (¤£°·±d)";
+    if (score >= 90) return "S (æ¥µä½³)";
+    else if (score >= 78 && score < 90) return "A (å¥åº·)";
+    else if (score >= 66 && score < 78) return "B (å°šå¯)";
+    else if (score >= 54 && score < 66) return "C (éœ€æ³¨æ„)";
+    else if (score >= 42 && score < 54) return "D (å¹¾ä¹Žä¸å¥åº·)";
+    else return "F (ä¸å¥åº·)";
 }
 
 void Meal::print()const {
