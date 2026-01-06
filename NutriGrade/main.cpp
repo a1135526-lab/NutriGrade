@@ -21,7 +21,7 @@ int main() {
 	}
 	catch (const exception&e)
 	{
-		cerr << e.what() << "\n\n";
+		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
@@ -30,7 +30,7 @@ int main() {
 	}
 	catch (const exception&e)
 	{
-		cerr << e.what() << "\n\n";
+		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
@@ -39,7 +39,7 @@ int main() {
 	}
 	catch (const exception& e)
 	{
-		cerr << e.what() << "\n\n";
+		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
@@ -49,7 +49,7 @@ int main() {
 	}
 	catch (const exception& e)
 	{
-		cerr << e.what() << "\n\n";
+		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
@@ -59,7 +59,7 @@ int main() {
 	}
 	catch (const exception& e)
 	{
-		cerr << e.what() << "\n\n";
+		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
@@ -69,7 +69,7 @@ int main() {
 	}
 	catch (const exception & e)
 	{
-		cerr << e.what() << "\n\n";
+		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
@@ -79,7 +79,7 @@ int main() {
 	}
 	catch (const exception& e)
 	{
-		cerr << e.what() << "\n\n";
+		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
@@ -89,7 +89,7 @@ int main() {
 	}
 	catch (const exception& e)
 	{
-		cerr << e.what() << "\n\n";
+		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
@@ -99,7 +99,7 @@ int main() {
 	}
 	catch (const exception& e)
 	{
-		cerr << e.what() << "\n\n";
+		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
@@ -109,7 +109,7 @@ int main() {
 	}
 	catch (const exception& e)
 	{
-		cerr << e.what() << "\n\n";
+		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 	try
 	{
@@ -119,6 +119,6 @@ int main() {
 	}
 	catch (const exception& e)
 	{
-		cerr << e.what() << "\n\n";
+		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 }
