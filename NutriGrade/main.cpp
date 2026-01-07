@@ -247,7 +247,6 @@ int main() {
 		else if (type == "d")
 		{
 			cout << "您選擇的是點心類別\n請依序輸入\n";
-			cin >> name >> cal >> pro >> fat >> sat >> trans >> carbon >> sug >> na >> ca >> ka >> fruit >> refindSugar;
 			foodInfoInput(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka);
 
 			cout << "是否有水果 (Y/n): ";
