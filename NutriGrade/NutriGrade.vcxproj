@@ -130,6 +130,7 @@
     <ClInclude Include="baverage.h" />
     <ClInclude Include="dessert.h" />
     <ClInclude Include="food.h" />
+    <ClInclude Include="inputValidator.h" />
     <ClInclude Include="juice.h" />
     <ClInclude Include="meal.h" />
   </ItemGroup>
@@ -137,6 +138,7 @@
     <ClCompile Include="baverage.cpp" />
     <ClCompile Include="dessert.cpp" />
     <ClCompile Include="food.cpp" />
+    <ClCompile Include="inputValidator.cpp" />
     <ClCompile Include="juice.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="meal.cpp" />

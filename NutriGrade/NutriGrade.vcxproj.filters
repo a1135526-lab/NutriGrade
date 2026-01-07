@@ -30,6 +30,9 @@
     <ClInclude Include="dessert.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="inputValidator.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="food.cpp">
@@ -48,6 +51,9 @@
       <Filter>資源檔</Filter>
     </ClCompile>
     <ClCompile Include="dessert.cpp">
+      <Filter>資源檔</Filter>
+    </ClCompile>
+    <ClCompile Include="inputValidator.cpp">
       <Filter>資源檔</Filter>
     </ClCompile>
   </ItemGroup>
