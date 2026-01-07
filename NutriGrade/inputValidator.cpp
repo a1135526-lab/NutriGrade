@@ -27,49 +27,53 @@ string InputValidator::getName()
 
 bool InputValidator::getBool()
 {
-	getline(cin, InputValidator::input);
-	std::istringstream iss(input);
-	char in;
-	if (iss >> in)
+	while (true)
 	{
-		in = (char)std::tolower(in);
-		if (!iss.eof()) throw std::invalid_argument("Invalid input");
+		getline(cin, InputValidator::input);
+		std::istringstream iss(input);
+		char in;
+		if (iss >> in)
+		{
+			in = (char)std::tolower(in);
 
-		if (in == 'y' || in == '1') return true;
-		if (in == 'n' || in == '0') return false;
+			if (in == 'y' || in == '1') return true;
+			if (in == 'n' || in == '0') return false;
+		}
+		std::cout << "輸入錯誤，請再輸入一次(Y/n): ";
 	}
-	throw std::invalid_argument("Invalid input");
 }
 
 char InputValidator::getFoodType()
 {
-	getline(cin, InputValidator::input);
-	std::istringstream iss(input);
-	char in;
-	if (iss >> in)
-	{
-		in = (char)std::tolower(in);
-		if (!iss.eof()) throw std::invalid_argument("Invalid input");
+	while (true) {
+		getline(cin, InputValidator::input);
+		std::istringstream iss(input);
+		char in;
+		if (iss >> in)
+		{
+			in = (char)std::tolower(in);
 
-		if (in == 'b') return 'b';
-		if (in == 'j') return 'j';
-		if (in == 'm') return 'm';
-		if (in == 'd') return 'd';
-		if (in == 'e') return 'e';
+			if (in == 'b') return 'b';
+			if (in == 'j') return 'j';
+			if (in == 'm') return 'm';
+			if (in == 'd') return 'd';
+			if (in == 'e') return 'e';
+		}
+		std::cout << "輸入錯誤，請再輸入一次(b/j/m/d/e): ";
 	}
-	throw std::invalid_argument("Invalid input");
 }
 
 double InputValidator::getNumber()
 {
-	getline(cin, InputValidator::input);
-	std::istringstream iss(input);
-	double in;
-	if (iss >> in)
+	while (true)
 	{
-		if (!iss.eof()) throw std::invalid_argument("Invalid input");
-
-		return in;
-	}
-	throw std::invalid_argument("Invalid input");
+		getline(cin, InputValidator::input);
+		std::istringstream iss(input);
+		double in;
+		if (iss >> in)
+		{
+			return in;
+		}
+		std::cout << "輸入錯誤，請再輸入一次(double): ";
+	}	
 }
