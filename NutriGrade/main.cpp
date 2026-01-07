@@ -134,7 +134,6 @@ void demo() {
 		cerr << "[ERROR] " << e.what() << "\n\n";
 	}
 }
-
 int main() {
 	cout << fixed << setprecision(2);
 	
@@ -142,7 +141,77 @@ int main() {
 	cout << "是否顯示範例? (Y/n)";
 	string usrInput;
 	cin >> usrInput;
-	if (usrInput.compare("Y") == 0) demo();
-
+	if (usrInput.compare("Y") == 0)demo();
+	else if (usrInput.compare("n") == 0) {
+		cout << "飲料請輸入 b\n果汁請輸入 j\n主餐請輸入 m\n點心請輸入 d\n結束請輸入 e\n";
+		cout << "請輸入食物類型 : ";
+		string type;
+		cin >> type;
+		string name;
+		double cal, pro, fat, sat, trans, carbon, sug, na, ca, ka, juicePercent, friedPercent;
+		bool content, pulp, fruit, refindSugar;
+		Food* FoodPtr = nullptr;
+		cout << "\n";
+		if (type == "b")
+		{
+			cout << "您選擇的是飲料類別\n請依序輸入(品項名稱,熱量,蛋白質,脂肪,飽和脂肪,反式脂肪,碳水化合物,糖,鈉,鈣,鉀,是否有內容物(珍珠,粉角)(true/false or 1/0)\n";
+			cin >> name >> cal >> pro >> fat >> sat >> trans >> carbon >> sug >> na >> ca >> ka >> content;
+			try
+			{
+				Baverage beverage(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka, content);
+				FoodPtr = &beverage;
+				FoodPtr->print();
+			}
+			catch (const exception& e)
+			{
+				cerr << "[ERROR] " << e.what() << "\n\n";
+			}
+		}
+		else if (type == "j")
+		{
+			cout << "您選擇的是果汁類別\n請依序輸入(品項名稱,熱量,蛋白質,脂肪,飽和脂肪,反式脂肪,碳水化合物,糖,鈉,鈣,鉀,是否有內容物(珍珠,粉角),果汁含量,是否有果肉)\n";
+			cin >> name >> cal >> pro >> fat >> sat >> trans >> carbon >> sug >> na >> ca >> ka >> content >> juicePercent >> pulp;
+			try
+			{
+				Juice juice(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka, content, juicePercent, pulp);
+				FoodPtr = &juice;
+				FoodPtr->print();
+			}
+			catch (const exception& e)
+			{
+				cerr << "[ERROR] " << e.what() << "\n\n";
+			}
+		}
+		else if (type == "m")
+		{
+			cout << "您選擇的是主食類別\n請依序輸入(品項名稱,熱量,蛋白質,脂肪,飽和脂肪,反式脂肪,碳水化合物,糖,鈉,鈣,鉀,油炸比例(目視))\n";
+			cin >> name >> cal >> pro >> fat >> sat >> trans >> carbon >> sug >> na >> ca >> ka >> friedPercent;
+			try
+			{
+				Meal meal(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka, friedPercent);
+				FoodPtr = &meal;
+				FoodPtr->print();
+			}
+			catch (const exception& e)
+			{
+				cerr << "[ERROR] " << e.what() << "\n\n";
+			}
+		}
+		else if (type == "d")
+		{
+			cout << "您選擇的是點心類別\n請依序輸入(品項名稱,熱量,蛋白質,脂肪,飽和脂肪,反式脂肪,碳水化合物,糖,鈉,鈣,鉀,是否有水果,是否為精緻糖)\n";
+			cin >> name >> cal >> pro >> fat >> sat >> trans >> carbon >> sug >> na >> ca >> ka >> fruit >> refindSugar;
+			try
+			{
+				Dessert dessert(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka, fruit, refindSugar);
+				FoodPtr = &dessert;
+				FoodPtr->print();
+			}
+			catch (const exception& e)
+			{
+				cerr << "[ERROR] " << e.what() << "\n\n";
+			}
+		}		
+	}
 	cout << "end\n";
 }
