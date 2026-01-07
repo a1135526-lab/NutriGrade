@@ -1,11 +1,11 @@
-#pragma once
+ï»¿#pragma once
 #include<string>
 
 class InputValidator {
 private:
 	static std::string input;
 	static void trim(std::string&);
-	InputValidator() = delete; // §¹¥şÀRºAÃş§O¡A¸T¤î«Ø¥ßª«¥ó
+	InputValidator() = delete; // å®Œå…¨éœæ…‹é¡åˆ¥ï¼Œç¦æ­¢å»ºç«‹ç‰©ä»¶
 public:
 	static std::string getName();
 	static bool getBool();
