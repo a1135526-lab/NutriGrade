@@ -72,8 +72,8 @@ double InputValidator::getNumber()
 		double in;
 		if (iss >> in)
 		{
-			return in;
+			if (in >= 0) return in;
 		}
-		std::cout << "輸入錯誤，請再輸入一次(double): ";
+		std::cout << "輸入錯誤，請再輸入一次 (必須 >= 0): ";
 	}	
 }
