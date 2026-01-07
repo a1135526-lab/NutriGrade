@@ -136,6 +136,32 @@ void demo() {
 	}
 }
 
+void foodInfoInput(string& name, double& cal, double& pro, double& fat, double& sat, double& trans, double& carbon, double& sug, double& na, double& ca, double& ka)
+{
+	cout << "品項名稱: "; 
+	name = InputValidator::getName();
+	cout << "熱量: ";
+	cal = InputValidator::getNumber();
+	cout << "蛋白質: ";
+	pro = InputValidator::getNumber();
+	cout << "脂肪: ";
+	fat = InputValidator::getNumber();
+	cout << "飽和脂肪: ";
+	sat = InputValidator::getNumber();
+	cout << "反式脂肪: ";
+	trans = InputValidator::getNumber();
+	cout << "碳水化合物: ";
+	carbon = InputValidator::getNumber();
+	cout << "糖: ";
+	sug = InputValidator::getNumber();
+	cout << "鈉: ";
+	na = InputValidator::getNumber();
+	cout << "鈣: ";
+	ca = InputValidator::getNumber();
+	cout << "鉀: ";
+	ka = InputValidator::getNumber();
+}
+
 int main() {
 	cout << fixed << setprecision(2);
 	
@@ -149,16 +175,22 @@ int main() {
 		string type;
 		type = InputValidator::getFoodType();
 
+		// 初始化食物參數與物件指標
 		string name;
 		double cal, pro, fat, sat, trans, carbon, sug, na, ca, ka, juicePercent, friedPercent;
 		bool content, pulp, fruit, refindSugar;
 		Food* FoodPtr = nullptr;
 		cout << "\n";
 
+		// 針對不同食物類型進行輸入參數與回應
 		if (type == "b")
 		{
-			cout << "您選擇的是飲料類別\n請依序輸入(品項名稱,熱量,蛋白質,脂肪,飽和脂肪,反式脂肪,碳水化合物,糖,鈉,鈣,鉀,是否有內容物(珍珠,粉角)(true/false or 1/0)\n";
-			cin >> name >> cal >> pro >> fat >> sat >> trans >> carbon >> sug >> na >> ca >> ka >> content;
+			cout << "您選擇的是飲料類別\n請依序輸入\n";
+			foodInfoInput(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka);
+			
+			cout << "是否有內容物(珍珠,粉角) (Y/n): ";
+			content = InputValidator::getBool();
+
 			try
 			{
 				Baverage beverage(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka, content);
@@ -172,8 +204,16 @@ int main() {
 		}
 		else if (type == "j")
 		{
-			cout << "您選擇的是果汁類別\n請依序輸入(品項名稱,熱量,蛋白質,脂肪,飽和脂肪,反式脂肪,碳水化合物,糖,鈉,鈣,鉀,是否有內容物(珍珠,粉角),果汁含量,是否有果肉)\n";
-			cin >> name >> cal >> pro >> fat >> sat >> trans >> carbon >> sug >> na >> ca >> ka >> content >> juicePercent >> pulp;
+			cout << "您選擇的是果汁類別\n請依序輸入\n";
+			foodInfoInput(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka);
+
+			cout << "是否有內容物(珍珠,粉角) (Y/n): ";
+			content = InputValidator::getBool();
+			cout << "果汁含量: ";
+			juicePercent = InputValidator::getNumber();
+			cout << "是否有果肉: ";
+			pulp = InputValidator::getBool();
+
 			try
 			{
 				Juice juice(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka, content, juicePercent, pulp);
@@ -187,8 +227,12 @@ int main() {
 		}
 		else if (type == "m")
 		{
-			cout << "您選擇的是主食類別\n請依序輸入(品項名稱,熱量,蛋白質,脂肪,飽和脂肪,反式脂肪,碳水化合物,糖,鈉,鈣,鉀,油炸比例(目視))\n";
-			cin >> name >> cal >> pro >> fat >> sat >> trans >> carbon >> sug >> na >> ca >> ka >> friedPercent;
+			cout << "您選擇的是主食類別\n請依序輸入\n";
+			foodInfoInput(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka);
+
+			cout << "油炸比例(目視): ";
+			friedPercent = InputValidator::getNumber();
+
 			try
 			{
 				Meal meal(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka, friedPercent);
@@ -202,8 +246,15 @@ int main() {
 		}
 		else if (type == "d")
 		{
-			cout << "您選擇的是點心類別\n請依序輸入(品項名稱,熱量,蛋白質,脂肪,飽和脂肪,反式脂肪,碳水化合物,糖,鈉,鈣,鉀,是否有水果,是否為精緻糖)\n";
+			cout << "您選擇的是點心類別\n請依序輸入\n";
 			cin >> name >> cal >> pro >> fat >> sat >> trans >> carbon >> sug >> na >> ca >> ka >> fruit >> refindSugar;
+			foodInfoInput(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka);
+
+			cout << "是否有水果 (Y/n): ";
+			fruit = InputValidator::getBool();
+			cout << "是否為精緻糖 (Y/n): ";
+			refindSugar = InputValidator::getBool();
+
 			try
 			{
 				Dessert dessert(name, cal, pro, fat, sat, trans, carbon, sug, na, ca, ka, fruit, refindSugar);
