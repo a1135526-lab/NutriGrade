@@ -201,7 +201,7 @@ int main() {
 			{
 				cerr << "[ERROR] " << e.what() << "\n\n";
 			}
-		}
+		}	
 		else if (type == "j")
 		{
 			cout << "您選擇的是果汁類別\n請依序輸入\n";

@@ -38,7 +38,7 @@ double Juice::calculateScore()const {
 	double negPoint = 0, posPoint = 0;
 
 	negPoint += (getCalories() / 100) * 4;//100kcal -4
-	negPoint += getSugar() * 1.8;//1g -1.8
+	negPoint += getSugar() * 1.5;//1g -1.5
 	negPoint += getSatfat() * 2;//1g -2
 	negPoint += getSodium() / 100;//100mg -1
 	posPoint += getProtein() * 4.5;//1g +4.5
@@ -48,7 +48,7 @@ double Juice::calculateScore()const {
 
 	if (getFruitPercent() >= 100) posPoint += 20;
 	else if (getFruitPercent() >= 40) posPoint += getFruitPercent() * 0.15;//1% +0.15
-	else if (getFruitPercent() <= 10) negPoint += 5;
+	else if (getFruitPercent() < 10) negPoint += 5;
 
 	if (getPulp()) posPoint += 5;
 
